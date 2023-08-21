@@ -1,0 +1,129 @@
+//Variables
+$brand-color: blueviolet;
+$brand-light-color: rgb(179, 133, 221);
+$dark-color: black;
+$grey-color: lightgrey;
+$light-color: white;
+
+//Map
+$colors: (
+    brand-color: blueviolet,
+    dark-color: black,
+    grey-color: lightgrey,
+    light-color: white
+);
+
+.button-prueba {
+    background-color: map-get($colors, brand-color);
+}
+
+//Mixins
+@mixin button-styles($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 0.5rem;
+    border: none;
+    margin: 1rem;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    @include button-styles ($brand-color, $light-color);
+}
+
+.btn-secondary {
+    @include button-styles ($grey-color, $dark-color);
+}
+
+//Partials / modules
+@import "./partials/card-present";
+
+//Operadores
+.gradient {
+    background: linear-gradient(45deg, $brand-color, $brand-light-color);
+    color: $light-color;
+    font-weight: 200 + 300;
+    border: none;
+    border-radius: 5px;
+    padding: 0.25rem * 2;
+    margin: 1rem;
+}
+
+//Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.body-inicio {
+    background-color: $dark-color;
+}
+
+.header {
+    background-color: $dark-color;
+
+    .container-color {
+        background-color: $dark-color;
+        padding: 1rem;
+    }
+
+    .toggler-color {
+        background-color: $brand-color;
+    }
+
+    .nav-link {
+        color: $light-color;
+
+        &:hover {
+            color: $grey-color;
+        }
+
+        &.link-active {
+            color: $brand-color;
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+.main-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-color;
+    height: 80vh;
+
+    .img-inicio {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+.enlaces {
+    color: $dark-color;
+    text-decoration: none;
+}
+
+.main__contacto {
+    background-color: $light-color;
+    height: 75vh;
+}
+
+.footer-pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: $brand-color;
+    color: $light-color;
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+}
+
+//Partials / modules
+@import "./partials/footer-cosmos";

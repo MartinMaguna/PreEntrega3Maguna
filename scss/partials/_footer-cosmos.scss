@@ -1,0 +1,11 @@
+.footer-cosmos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background-color: $brand-color;
+        color: $light-color;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+}
